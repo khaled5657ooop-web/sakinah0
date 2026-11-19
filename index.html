@@ -2,20 +2,22 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>سَكِينَة | SAKINAH</title>
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#021812">
-    <!-- كود إخفاء الرابط وفتح الموقع مباشرة -->
     <style>
-        body { margin: 0; background-color: #021812; height: 100vh; display: flex; align-items: center; justify-content: center; color: #a7f3d0; font-family: Tahoma; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; background-color: #021812; }
+        iframe { width: 100%; height: 100%; border: none; display: block; }
     </style>
 </head>
 <body>
-    <p>جاري التحميل...</p>
+    <iframe src="https://sakinah1.ai.studio/" allow="geolocation; microphone; autoplay"></iframe>
     <script>
-        // فتح الموقع الأساسي فوراً
-        window.location.replace("https://sakinah1.ai.studio/");
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
     </script>
 </body>
 </html>
